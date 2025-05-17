@@ -4,13 +4,13 @@
 
 set -e  # Exit immediately if a command fails
 
-echo "Fetching latest 'main' branch from upstream..."
-git fetch upstream main:upstream-main
+echo "Fetching 'main' from upstream..."
+git fetch upstream
 
-echo "Switching to your local 'main' branch..."
+echo "Checking out 'main' branch..."
 git checkout main
 
-echo "Merging upstream 'main' into your local 'main'..."
-git merge upstream-main
+echo "Rebasing your 'main' on top of 'upstream/main'..."
+git rebase upstream/main
 
-echo "Merge completed. Your 'main' is now up to date with the original PyTorch."
+echo "Done. Your local 'main' is now exactly aligned with upstream."

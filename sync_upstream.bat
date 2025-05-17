@@ -1,11 +1,11 @@
 @echo off
 echo Fetching 'main' from upstream...
-git fetch upstream main:upstream-main
+git fetch upstream
 
 echo Checking out 'main' branch...
 git checkout main
 
-echo Merging 'upstream-main' into 'main'...
-git merge upstream-main
+echo Rebasing your 'main' on top of 'upstream/main'...
+git rebase upstream/main
 
-echo Done. Your local 'main' branch is now up to date.
+echo Done. Your local 'main' is now exactly aligned with upstream.
