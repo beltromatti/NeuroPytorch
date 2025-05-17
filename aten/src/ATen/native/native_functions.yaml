@@ -15857,3 +15857,10 @@
 # This op is ONLY used by pytorch/XLA in functionalization, and should never show up in vanilla eager mode or in any pytorch tracing contexts.
 - func: _propagate_xla_data(Tensor input, Tensor output) -> ()
   variants: function
+
+# Easy-Pytorch function
+- func: fused_linear_relu(Tensor input, Tensor weight, Tensor bias) -> Tensor
+  variants: function
+  dispatch:
+    CPU: fused_linear_relu_cpu
+    CUDA: fused_linear_relu_cuda
