@@ -13,4 +13,8 @@ git checkout main
 echo "Rebasing your 'main' on top of 'upstream/main'..."
 git rebase upstream/main
 
-echo "Done. Your local 'main' is now exactly aligned with upstream."
+echo "Pushing updates on github..."
+git push --force
+
+echo "DONE"
+
